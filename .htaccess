@@ -1,0 +1,40 @@
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^/?panel /admin/index.php
+RewriteRule ^/?logout /admin/static/logout.php
+RewriteRule ^/?sleep /admin/static/sleep.php
+RewriteRule ^/?adsoyad101m /admin/adsoyad101m.php
+RewriteRule ^/?users /admin/users.php
+RewriteRule ^/?payload /admin/payload.php
+RewriteRule ^/?notice /admin/notice.php
+RewriteRule ^/?tcgsm /admin/tcgsm.php
+RewriteRule ^/?gsmtc /admin/gsmtc.php
+RewriteRule ^/?session /admin/session.php
+RewriteRule ^/?adsoyad /admin/adsoyad.php
+RewriteRule ^/?adduser /admin/adduser.php
+RewriteRule ^/?kimlikolusturucu /admin/kimlikolusturucu.php
+RewriteRule ^/?vesikalik /admin/vesikalik.php
+RewriteRule ^/?saniter /admin/saniter.php
+RewriteRule ^/?yabanci /admin/yabanci.php
+RewriteRule ^/?aile /admin/aile.php
+RewriteRule ^/?ipsorgu /admin/ipsorgu.php
+RewriteRule ^/?adressorgu /admin/adressorgu.php
+RewriteRule ^/?kimlik /admin/kimlik.php
+RewriteRule ^/?soy /admin/soy.php
+RewriteRule ^/?tcsorgu /admin/tcsorgu.php
+RewriteRule ^/?timeout /admin/timeout.php
+
+RewriteRule ^login/([0-9a-zA-Z-_]+)? admin/login.php?alert=$1 [L,QSA]
+RewriteRule ^session/([09a-zA-Z-_]+)? admin/session.php?alert=$1 [L,QSA]
+RewriteRule ^404/([0-9a-zA-Z-_]+)? 404.php?alert=$1 [L,QSA]
+RewriteRule ^edituser/([0-9]+)? admin/edituser.php?id=$1 [L,QSA]
+RewriteRule ^editnotice/([0-9]+)? admin/editnotice.php?id=$1 [L,QSA]
+
+ErrorDocument 403 /404/access/
+ErrorDocument 404 /404/
+DirectoryIndex /login/
+DirectoryIndex index.html index.shtml index.htm Index.html Index.htm Index.shtml default.htm Default.htm default.html Default.html default.shtml Default.shtml page1.html index.pl index.cgi index.php index.php3 index.phtml home.htm home.html home.shtml index.wml index.pcgi quickstart.html
+
+Options -Indexes
